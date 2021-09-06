@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Rental
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "rental_id", nullable = false)
     private Long rental_id;
@@ -100,5 +100,15 @@ public class Rental
 
     public void setRental_id(Long rental_id) {
         this.rental_id = rental_id;
+    }
+
+    public Rental(Long rental_id, LocalDate rental_date, LocalDate return_date, LocalDate last_update) {
+        this.rental_id = rental_id;
+        this.rental_date = rental_date;
+        this.return_date = return_date;
+        this.last_update = last_update;
+    }
+
+    public Rental() {
     }
 }

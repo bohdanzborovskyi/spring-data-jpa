@@ -77,4 +77,14 @@ public class Payment
     public void setPayment_id(Long payment_id) {
         this.payment_id = payment_id;
     }
+
+    public Payment(double amount, LocalDate payment_date, Rental rental, Staff staff) {
+        this.amount = amount;
+        this.payment_date = payment_date;
+        this.rental = rental;
+        this.staff = staff;
+    }
+
+    public Payment() {
+    }
 }

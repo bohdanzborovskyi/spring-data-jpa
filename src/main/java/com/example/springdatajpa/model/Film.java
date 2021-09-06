@@ -48,7 +48,8 @@ public class Film
     private String fulltext;
 
     @OneToMany
-    @JoinColumn(name = "film_id", nullable = false)
+    @JoinColumn(name = "film_id")
+//            , nullable = false)
     private Set<Language> languages;
 
     @ManyToMany
@@ -193,5 +194,25 @@ public class Film
 
     public void setFilm_id(Long film_id) {
         this.film_id = film_id;
+    }
+
+    public Film() {
+    }
+
+    public Film(String title, String description, String release_year, int rental_duration,
+                double rental_rate, String length, double replacement_cost, double rating,
+                LocalDate last_update, String special_features, String fulltext, Set<Language>languages) {
+        this.title = title;
+        this.description = description;
+        this.release_year = release_year;
+        this.rental_duration = rental_duration;
+        this.rental_rate = rental_rate;
+        this.length = length;
+        this.replacement_cost = replacement_cost;
+        this.rating = rating;
+        this.last_update = last_update;
+        this.special_features = special_features;
+        this.fulltext = fulltext;
+        this.languages = languages;
     }
 }

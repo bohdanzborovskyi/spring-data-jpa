@@ -53,4 +53,12 @@ public class Category
     public void setCategory_id(Long id) {
         this.category_id = id;
     }
+
+    public Category(String name, LocalDate last_update) {
+        this.name = name;
+        this.last_update = last_update;
+    }
+
+    public Category() {
+    }
 }

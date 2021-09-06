@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Entity
 public class Language
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+ //  @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "language_id", nullable = false)
     private Long language_id;
@@ -42,5 +42,12 @@ public class Language
         this.language_id = language_id;
     }
 
+    public Language(Long language_id, String name, LocalDate last_update) {
+        this.language_id = language_id;
+        this.name = name;
+        this.last_update = last_update;
+    }
 
+    public Language() {
+    }
 }

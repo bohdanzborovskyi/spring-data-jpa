@@ -64,4 +64,13 @@ public class Actor
     public void setActor_id(Long actor_d) {
         this.actor_id = actor_d;
     }
+
+    public Actor(String first_name, String last_name, LocalDate last_update) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.last_update = last_update;
+    }
+
+    public Actor() {
+    }
 }

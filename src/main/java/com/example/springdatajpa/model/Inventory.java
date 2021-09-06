@@ -66,4 +66,12 @@ public class Inventory
     public void setInventory_id(Long inventory_id) {
         this.inventory_id = inventory_id;
     }
+
+    public Inventory(LocalDate last_update, Rental rental) {
+        this.rental = rental;
+        this.last_update = last_update;
+    }
+
+    public Inventory() {
+    }
 }

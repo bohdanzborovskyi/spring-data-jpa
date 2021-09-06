@@ -64,4 +64,14 @@ public class City
     public void setCity_id(Long city_id) {
         this.city_id = city_id;
     }
+
+    public City() {
+    }
+
+    public City(Long city_id, String city, LocalDate last_update, Country country) {
+        this.city_id = city_id;
+        this.city = city;
+        this.last_update = last_update;
+        this.country = country;
+    }
 }

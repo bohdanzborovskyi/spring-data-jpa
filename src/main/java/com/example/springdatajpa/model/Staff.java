@@ -2,6 +2,7 @@ package com.example.springdatajpa.model;
 
 import javax.persistence.*;
 import java.sql.Blob;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
 
@@ -9,7 +10,7 @@ import java.util.Locale;
 @Entity
 public class Staff
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Id
     @Column(name = "staff_id", nullable = false)
     private Long staff_id;
@@ -32,8 +33,8 @@ public class Staff
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @Column(name = "emial")
-    private String emial;
+    @Column(name = "email")
+    private String email;
 
     @OneToOne(orphanRemoval = true)
     @JoinColumn(name = "store_id")
@@ -49,7 +50,7 @@ public class Staff
     private String password;
 
     @Column(name = "last_update")
-    private Locale last_update;
+    private LocalDate last_update;
 
     @Lob
     @Column(name = "picture")
@@ -63,11 +64,11 @@ public class Staff
         this.picture = picture;
     }
 
-    public Locale getLast_update() {
+    public LocalDate getLast_update() {
         return last_update;
     }
 
-    public void setLast_update(Locale last_update) {
+    public void setLast_update(LocalDate last_update) {
         this.last_update = last_update;
     }
 
@@ -103,12 +104,12 @@ public class Staff
         this.store = store;
     }
 
-    public String getEmial() {
-        return emial;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmial(String emial) {
-        this.emial = emial;
+    public void setEmail(String emial) {
+        this.email = emial;
     }
 
     public Address getAddress() {
@@ -157,5 +158,19 @@ public class Staff
 
     public void setStaff_id(Long staff_id) {
         this.staff_id = staff_id;
+    }
+
+    public Staff(Long staff_id, String first_name, String last_name, String emial, boolean active, String username, String password, LocalDate last_update) {
+        this.staff_id = staff_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = emial;
+        this.active = active;
+        this.username = username;
+        this.password = password;
+        this.last_update = last_update;
+    }
+
+    public Staff() {
     }
 }

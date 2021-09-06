@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Address
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "address_id", nullable = false)
     private Long address_id;
@@ -120,5 +120,19 @@ public class Address
 
     public void setAddress_id(Long address_id) {
         this.address_id = address_id;
+    }
+
+    public Address() {
+    }
+
+    public Address(Long address_id, String address, String address2, String distinct, String postal_code, String phone, LocalDate last_update, City city) {
+        this.address_id = address_id;
+        this.address = address;
+        this.address2 = address2;
+        this.distinct = distinct;
+        this.postal_code = postal_code;
+        this.phone = phone;
+        this.last_update = last_update;
+        this.city = city;
     }
 }

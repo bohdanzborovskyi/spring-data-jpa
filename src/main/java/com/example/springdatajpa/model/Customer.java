@@ -145,4 +145,21 @@ public class Customer
     public void setCustomer_id(Long customer_id) {
         this.customer_id = customer_id;
     }
+
+    public Customer(String first_name, String last_name, String email,
+                    boolean activebool, LocalDate create_date, LocalDate last_update, boolean active,
+                    Address address, Rental rental) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.activebool = activebool;
+        this.create_date = create_date;
+        this.last_update = last_update;
+        this.active = active;
+        this.address = address;
+        this.rental = rental;
+    }
+
+    public Customer() {
+    }
 }

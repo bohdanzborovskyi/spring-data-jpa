@@ -53,4 +53,13 @@ public class Country
     public void setCountry_id(Long country_id) {
         this.country_id = country_id;
     }
+
+    public Country(Long country_id, String country, LocalDate last_update) {
+        this.country_id = country_id;
+        this.country = country;
+        this.last_update = last_update;
+    }
+
+    public Country() {
+    }
 }

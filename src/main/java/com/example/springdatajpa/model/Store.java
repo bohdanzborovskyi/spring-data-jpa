@@ -30,4 +30,12 @@ public class Store
     public void setStore_id(Long store_id) {
         this.store_id = store_id;
     }
+
+    public Store(Staff staff) {
+        this.staff = staff;
+    }
+
+    public Store(){}
+
+
 }
