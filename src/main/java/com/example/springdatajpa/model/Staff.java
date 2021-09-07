@@ -36,7 +36,7 @@ public class Staff
     @Column(name = "email")
     private String email;
 
-    @OneToOne(orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name = "store_id")
     private Store store;
 
@@ -160,7 +160,9 @@ public class Staff
         this.staff_id = staff_id;
     }
 
-    public Staff(Long staff_id, String first_name, String last_name, String emial, boolean active, String username, String password, LocalDate last_update) {
+    public Staff(Long staff_id, String first_name, String last_name, String emial,
+                 boolean active, String username, String password, LocalDate last_update,
+                 Address address, Store store) {
         this.staff_id = staff_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -169,6 +171,8 @@ public class Staff
         this.username = username;
         this.password = password;
         this.last_update = last_update;
+        this.address = address;
+        this.store = store;
     }
 
     public Staff() {

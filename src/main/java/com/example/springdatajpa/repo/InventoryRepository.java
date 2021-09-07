@@ -1,7 +1,12 @@
 package com.example.springdatajpa.repo;
 
+import com.example.springdatajpa.model.Film;
 import com.example.springdatajpa.model.Inventory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface InventoryRepository extends JpaRepository<Inventory, Long> {
+import java.util.List;
+
+public interface InventoryRepository extends JpaRepository<Inventory, Long>
+{
+    List<Inventory> findAllByFilm(Film film);
 }

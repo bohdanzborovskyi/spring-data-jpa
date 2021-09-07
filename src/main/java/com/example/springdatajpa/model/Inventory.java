@@ -7,7 +7,6 @@ import java.time.LocalDate;
 @Entity
 public class Inventory
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "inventory_id", nullable = false)
     private Long inventory_id;
@@ -67,9 +66,11 @@ public class Inventory
         this.inventory_id = inventory_id;
     }
 
-    public Inventory(LocalDate last_update, Rental rental) {
+    public Inventory(Long inventory_id, LocalDate last_update, Rental rental, Film film) {
+        this.inventory_id = inventory_id;
         this.rental = rental;
         this.last_update = last_update;
+        this.film = film;
     }
 
     public Inventory() {

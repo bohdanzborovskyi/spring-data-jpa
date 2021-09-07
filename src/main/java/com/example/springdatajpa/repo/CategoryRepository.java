@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category, Long>
 {
-    List<Category> findAllAndSortOrderByName();
+    List<Category> findByOrderByNameAsc();
+    Category findByName(String name);
 }

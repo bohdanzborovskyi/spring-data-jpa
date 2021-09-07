@@ -52,10 +52,10 @@ public class Film
 //            , nullable = false)
     private Set<Language> languages;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "film_category",
-            joinColumns = @JoinColumn(name = "film_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
+            joinColumns = @JoinColumn(name = "film_id", referencedColumnName = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
     private List<Category> categories;
 
     @ManyToMany
@@ -201,7 +201,8 @@ public class Film
 
     public Film(String title, String description, String release_year, int rental_duration,
                 double rental_rate, String length, double replacement_cost, double rating,
-                LocalDate last_update, String special_features, String fulltext, Set<Language>languages) {
+                LocalDate last_update, String special_features, String fulltext, Set<Language>languages
+                , List<Actor> actors) {
         this.title = title;
         this.description = description;
         this.release_year = release_year;
@@ -214,5 +215,11 @@ public class Film
         this.special_features = special_features;
         this.fulltext = fulltext;
         this.languages = languages;
+        this.actors = actors;
+    }
+
+    public void addCategory(Category category)
+    {
+        this.getCategories().add(category);
     }
 }

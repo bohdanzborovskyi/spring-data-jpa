@@ -8,7 +8,6 @@ import java.util.List;
 @Entity
 public class Actor
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "actor_id", nullable = false)
     private Long actor_id;
@@ -65,7 +64,8 @@ public class Actor
         this.actor_id = actor_d;
     }
 
-    public Actor(String first_name, String last_name, LocalDate last_update) {
+    public Actor(Long actor_id, String first_name, String last_name, LocalDate last_update) {
+        this.actor_id = actor_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.last_update = last_update;

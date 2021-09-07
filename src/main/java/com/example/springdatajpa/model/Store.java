@@ -6,13 +6,12 @@ import javax.persistence.*;
 @Entity
 public class Store
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
+   @Id
     @Column(name = "store_id", nullable = false)
     private Long store_id;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "staff_id", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "staff_id")
     private Staff staff;
 
     public Staff getStaff() {
@@ -33,6 +32,11 @@ public class Store
 
     public Store(Staff staff) {
         this.staff = staff;
+    }
+
+    public Store(Long store_id)
+    {
+        this.store_id = store_id;
     }
 
     public Store(){}

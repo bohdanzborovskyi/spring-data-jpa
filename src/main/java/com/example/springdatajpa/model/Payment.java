@@ -78,11 +78,12 @@ public class Payment
         this.payment_id = payment_id;
     }
 
-    public Payment(double amount, LocalDate payment_date, Rental rental, Staff staff) {
+    public Payment(double amount, LocalDate payment_date, Rental rental, Staff staff, Customer customer) {
         this.amount = amount;
         this.payment_date = payment_date;
         this.rental = rental;
         this.staff = staff;
+        this.customer = customer;
     }
 
     public Payment() {

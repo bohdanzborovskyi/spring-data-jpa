@@ -8,7 +8,6 @@ import java.util.List;
 @Entity
 public class Customer
 {
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "customer_id", nullable = false)
     private Long customer_id;
@@ -146,9 +145,10 @@ public class Customer
         this.customer_id = customer_id;
     }
 
-    public Customer(String first_name, String last_name, String email,
+    public Customer(Long customer_id, String first_name, String last_name, String email,
                     boolean activebool, LocalDate create_date, LocalDate last_update, boolean active,
                     Address address, Rental rental) {
+        this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
